@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json()); //Without this (json-parser), the propery "body" of the object would be undefined.
 // json-parser: tooks the JSON data of the request, converts it to JS and then adds it to the body property of the requested body.
 
+app.use(express.static("dist"));
+
 app.use(morgan(function(tokens, req, res) {
     const body = JSON.stringify(req.body);
     return [
@@ -76,6 +78,7 @@ const generateId = () => {
 
 app.post("/api/people", (req, res) => {
   const body = req.body;
+  console.log("estoy en el post de node")
 
   if (!body.name || !body.number) {
     return res.status(400).json({ error: "name or number are missing" });
