@@ -4,7 +4,7 @@ import globals from 'globals';
 
 export default [
   {
-    ignores: ['node_modules/', 'dist/', '*.test.js'], // Replace .eslintignore with this property
+    ignores: ['node_modules/', 'dist/', '*.test.js'],
   },
   {
     files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
@@ -21,7 +21,6 @@ export default [
       '@typescript-eslint': eslintPluginTypescript
     },
     rules: {
-      'no-console': 'warn',
       'no-unused-vars': 'warn',
       'react/prop-types': 'off',
       '@typescript-eslint/no-unused-vars': 'warn'
